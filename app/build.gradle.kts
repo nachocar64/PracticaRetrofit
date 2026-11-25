@@ -52,4 +52,11 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+
+    // Consumo de API REST: Retrofit + Gson + Corrutinas
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+    // Registro de las peticiones en Logcat (solo para depurar)
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
 }
