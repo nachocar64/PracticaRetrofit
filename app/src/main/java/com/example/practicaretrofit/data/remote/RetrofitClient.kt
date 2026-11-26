@@ -2,10 +2,25 @@ package com.example.practicaretrofit.data.remote
 
 object RetrofitClient {
     // Debe terminar en "/" para que Retrofit pueda concatenar las rutas relativas.
-    private const val BASE_URL = "https://pokeapi.co/api/v2/"
+    private const val BASE_URL_POKE = "https://pokeapi.co/api/v2/"
 
-    val api: PokeApiService by lazy {
-        FabricaRetrofit.crear(BASE_URL).create(PokeApiService:: class. java)
+    private const val BASE_URL_JSON = "https://jsonplaceholder.typicode.com/"
 
+    val pokeApi: PokeApiService by lazy {
+        FabricaRetrofit.crear(BASE_URL_POKE).create(PokeApiService:: class. java)
     }
+
+    val publiApi: PublicacionesService by lazy {
+        FabricaRetrofit.crear(BASE_URL_JSON)
+            .create(PublicacionesService::class.java)
+    }
+
+    private const val BASE_URL_DIR =
+        "https://clgqxx5idk.g4.sqlite.cloud:443/v2/functions/"
+
+    val dirApi: DirectorioService by lazy {
+        FabricaRetrofit.crear(BASE_URL_DIR)
+            .create(DirectorioService::class.java)
+    }
+
 }

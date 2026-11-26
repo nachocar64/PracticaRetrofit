@@ -9,7 +9,7 @@ import kotlinx.coroutines.CancellationException
 import retrofit2.HttpException
 
 
-class PokemonRepository(private val api: PokeApiService = RetrofitClient.api) {
+class PokemonRepository(private val api: PokeApiService = RetrofitClient.pokeApi) {
 
     suspend fun obtenerPokemones(limite: Int, desplazamiento: Int): Resultado<List<PokemonResumen>> =
         try {
