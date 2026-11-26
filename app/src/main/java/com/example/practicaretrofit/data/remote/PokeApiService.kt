@@ -1,4 +1,4 @@
-package com.upb.pokeapi.data.remote
+package com.example.practicaretrofit.data.remote
 
 import retrofit2.http.GET
 import retrofit2.http.Path
