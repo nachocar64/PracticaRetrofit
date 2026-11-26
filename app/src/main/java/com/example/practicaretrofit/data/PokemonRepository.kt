@@ -1,10 +1,11 @@
-package com.example.practicaretrofit.data.remote
+package com.example.practicaretrofit.data
 
+import com.example.practicaretrofit.data.remote.PokeApiService
+import com.example.practicaretrofit.data.remote.RetrofitClient
+import com.example.practicaretrofit.model.PokemonResumen
 import com.example.practicaretrofit.util.Resultado
 import java.io.IOException
 import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 import retrofit2.HttpException
 
 
