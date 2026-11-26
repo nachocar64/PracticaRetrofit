@@ -80,4 +80,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
     // Registro de las peticiones en Logcat (solo para depurar)
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+    // Pruebas de Retrofit
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.11.0")
 }
