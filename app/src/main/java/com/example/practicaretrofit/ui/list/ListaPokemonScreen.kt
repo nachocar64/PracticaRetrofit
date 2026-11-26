@@ -35,19 +35,37 @@ fun ListaPokemonScreen(viewModel: ListaPokemonViewModel = viewModel()) {
     val estado by viewModel.uiState.collectAsState()
     val error = estado.error
 
+
     when {
-        estado.cargando -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        estado.cargando -> Box(
+            Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
             CircularProgressIndicator()
         }
 
-        error != null -> MensajeDeError(mensaje = error, onReintentar = viewModel::cargar)
+        error != null -> MensajeDeError(
+            mensaje = error,
+            onReintentar = viewModel::cargar
+        )
+
+        estado.pokemones.isEmpty() -> Box(
+            Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Text("Sin resultados")
+        }
+
         else -> LazyColumn {
             items(estado.pokemones, key = { it.id }) { pokemon ->
-                Text("#${pokemon.id} ${pokemon.nombre}", modifier = Modifier.padding(16.dp))
-
+                Text(
+                    "#${pokemon.id} ${pokemon.nombre}",
+                    modifier = Modifier.padding(16.dp)
+                )
             }
         }
     }
+
 }
 
 @Composable
