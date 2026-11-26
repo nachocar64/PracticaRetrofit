@@ -15,4 +15,12 @@ object RetrofitClient {
             .create(PublicacionesService::class.java)
     }
 
+    private const val BASE_URL_DIR =
+        "https://clgqxx5idk.g4.sqlite.cloud:443/v2/functions/"
+
+    val dirApi: DirectorioService by lazy {
+        FabricaRetrofit.crear(BASE_URL_DIR)
+            .create(DirectorioService::class.java)
+    }
+
 }

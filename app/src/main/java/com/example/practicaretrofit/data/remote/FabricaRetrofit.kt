@@ -17,7 +17,7 @@ object FabricaRetrofit {
             // Solo en desarrollo: en la app publicada no se debe registrar el contenido de las
             builder.addInterceptor(HttpLoggingInterceptor().apply {
                 level =
-                    HttpLoggingInterceptor.Level.BODY
+                    HttpLoggingInterceptor.Level.BASIC
             })
         }
         builder.build()
